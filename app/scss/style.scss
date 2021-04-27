@@ -1,0 +1,186 @@
+@import 'reset';
+@import 'btns';
+@import 'dropdown';
+@import 'headers';
+@import 'srchcard'; 
+@import 'info';
+
+* {
+  font-family: 'Questrial', sans-serif;
+}
+
+//Sidebar
+#home {
+
+  .leaflet-sidebar-header {
+    background-color:rgb(76, 0, 255);
+  }
+}
+
+.leaflet-sidebar-tabs>ul>li#home.active {
+    background-color:rgb(76, 0, 255);
+}
+
+
+#search {
+  .leaflet-sidebar-header {
+    background-color:rgb(255, 174, 0);
+  }
+}
+.leaflet-sidebar-tabs>ul>li#search.active {
+  background-color:rgb(255, 174, 0);
+}
+
+#info {
+  .leaflet-sidebar-header {
+    background-color:rgb(0, 217, 255);
+  }
+}
+.leaflet-sidebar-tabs>ul>li#info.active {
+  background-color:rgb(0, 217, 255);
+}
+
+#help {
+  .leaflet-sidebar-header {
+    background-color:rgb(78, 158, 125);
+  }
+}
+.leaflet-sidebar-tabs>ul>li#help.active {
+  background-color:rgb(78, 158, 125);
+}
+
+
+.leaflet-sidebar-content {
+  background: rgba(255, 255, 255, 0.6);
+  #info {
+    background: rgb(241, 237, 237);
+    height: 100vh;
+  }
+}
+
+#map1 {
+  height: 100vh;
+}
+
+#map2 {
+  height: 100vh;
+}
+
+.info, .info2 {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  h4 {
+    margin: 0 0 5px;
+  }
+}
+
+//Legend
+#lgndtxt {
+  font-weight: 800;
+  padding-bottom: 5px;
+}
+
+.legend, .legend2 {
+  text-align: left;
+  line-height: 18px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.legend i, .legend2 i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+#srchZipCode,
+#srchCongDist,
+#srchReset {
+  display: none;
+}
+
+.tippy-tooltip.test-theme {
+  background-image: linear-gradient(to right, #feebe2, #f768a1, #7a0177);
+  color: slateblue;
+}
+
+.tippy-tooltip.default-theme {
+  background-color: ghostwhite;
+  color: black;
+}
+
+//Hiding Scrollbar but keeps functionality
+.leaflet-sidebar-content::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none;
+}
+  .leaflet-sidebar-content {
+/* Hide scrollbar for IE, Edge and Firefox */
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+
+  }
+
+//Positions the Info Control, Zoom, and Baselayer Selector with CSS Grid & Sets no border for zoom control, so when the baselayer expands the border doesn't expand
+  .leaflet-right {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    .leaflet-control-layers {
+      grid-column: 2/3;
+      grid-row: 2;
+      border: none;
+    }
+    .leaflet-control-zoomhome {
+      grid-column: 3/4;
+      grid-row: 1/3;
+      border: none;
+    }
+    .info {
+      grid-column: 1/4;
+    } 
+  }
+
+
+
+  .map2 .leaflet-left {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    .leaflet-control-layers {
+      grid-column: 2/3;
+      grid-row: 2;
+      border: none;
+    }
+    .leaflet-control-zoomhome {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      border: none;
+    }
+    .info2 {
+      grid-column: 1/4;
+    } 
+  }
+
+  .map1 .leaflet-left {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    .leaflet-control-browser-print {
+      grid-column: 1;
+      grid-row: 2;
+      border: none;
+    }
+    .leaflet-social-control {
+      grid-column: 1/2;
+      grid-row: 1;
+      border: none;
+    }
+  }
+
+ 

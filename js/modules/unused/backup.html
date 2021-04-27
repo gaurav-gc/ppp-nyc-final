@@ -1,0 +1,335 @@
+<label>Select a Category</label>
+<select name="" id="slctCat" class="map1 __custom-select">
+  <option value="btype">Business Type</option>
+  <option value="gender">Gender</option>
+  <option value="nonprofit">Nonprofit</option>
+  <option value="lender">Top 5 Lenders</option>
+  <option value="vet">Veterans</option>
+  <option value="one50k">Greater Than 150K</option>
+</select>
+<!--- select category --->
+<div class="form-group">
+<label for="">Select a Metric</label>
+<select name="" id="slctMet" class="form-control slctgrps map1">
+  <option value="0" selected disabled>Please Select</option>
+  <option value="jbRt">Jobs Retained</option>
+  <option value="lnAmt">Loan Amount</option>
+</select>
+</div>
+<!--- select metric --->
+<!---CATEGORIES--->
+<div class="category1">
+<div class="form-group btype grps">
+  <label for="">Business Type</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please Select</option>
+    <option value="corp">Corporation</option>
+    <option value="llc">
+      Limited Liability Corporation (LLC)
+    </option>
+    <option value="semp">Self-Employed</option>
+    <option value="indcon">Independent Contractor</option>
+    <option value="npo">Non-Profit Organization</option>
+  </select>
+</div>
+<!--- btype --->
+<div class="form-group gender grps">
+  <label>Gender</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please Select</option>
+    <option value="f">Female</option>
+    <option value="m">Male</option>
+  </select>
+</div>
+<!---.gender--->
+<div class="form-group nonprofit grps">
+  <label>Nonprofit</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please Select</option>
+    <option value="y">Yes</option>
+    <option value="n">No</option>
+  </select>
+</div>
+<!---.nonprofit--->
+<div class="form-group lender grps">
+  <label>Top 5 Lenders</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please Select</option>
+    <option value="jpmc">JP Morgan Chase Bank</option>
+    <option value="td">TD Bank</option>
+    <option value="cb">Citibank</option>
+    <option value="boa">Bank of America</option>
+    <option value="crb">Cross River Bank</option>
+  </select>
+</div>
+<!---.lender--->
+<div class="form-group vet grps">
+  <label>Veteran</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please select</option>
+    <option value="v">Veteran</option>
+    <option value="nv">Nonvet</option>
+  </select>
+</div>
+<!---veteran--->
+<div class="form-group one50k grps">
+  <label>Greater Than 150K</label>
+  <select
+    name=""
+    id=""
+    class="form-control slctAttr slctgrps map1"
+  >
+    <option value="0" selected disabled>Please select</option>
+    <option value="a150">$5-$10 Million</option>
+    <option value="b150">$2-$5 Million</option>
+    <option value="c150">$1-$2 Million</option>
+    <option value="d150">$350K-$1 Million</option>
+    <option value="e150">$150K-$350K</option>
+  </select>
+</div>
+<!---150k--->
+</div>
+<!---.category-->
+<!--- SELECT MAP --->
+<div class="form-group">
+<label>Select a Geography</label>
+<select name="" id="slctMap" class="form-control slctgrps map1">
+  <option value="0" selected disabled>Please Select</option>
+  <option value="boro">Borough</option>
+  <option value="cd">Congressional Districts</option>
+  <option value="nta">Neighborhood Tabulation Area</option>
+  <option value="zip">Zip Code</option>
+  <option value="ntaBK">NTA - BK</option>
+  <option value="ntaQN">NTA - QN</option>
+  <option value="ntaMN">NTA - MN</option>
+  <option value="ntaBX">NTA - BX</option>
+  <option value="ntaSI">NTA - SI</option>
+</select>
+</div>
+
+
+
+const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+
+const optionsList = document.querySelectorAll(".option");
+
+selected.addEventListener("click", () => {
+  optionsContainer.classList.toggle("active");
+});
+
+optionsList.forEach(o => {
+  o.addEventListener("click", () => {
+    selected.innerHTML = o.querySelector("label").innerHTML;
+    optionsContainer.classList.remove("active");
+  });
+});
+
+var crteKeys = $('.map1').on('click', function bldKeys() {
+  optionsList.forEach(o => {
+    o.addEventListener("click", () => {
+      const chosen = o.querySelector(".slctCat").value;
+      slctCat = chosen;
+      selected.setAttribute("value", chosen);
+    });
+  });
+});
+
+
+slctMet = $('#slctMet:visible').val();
+slctAttr = $('.slctAttr:visible').val();
+slctMap = $('#slctMap:visible').val();
+infoKey = slctCat2 + '_' + slctMet + '_' + slctAttr;
+mapkey = slctCat2 + slctMet + slctAttr + slctMap;
+console.log(slctCat);
+
+var crteKeys = $('.map1').on('click', function bldKeys() {
+  optionsList.forEach(o => {
+    o.addEventListener("click", () => {
+      const chosen = o.querySelector(".slctCat").value;
+      slctCat = chosen;
+      selected.setAttribute("value", chosen);
+    });
+  });
+
+
+  const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+
+const optionsList = document.querySelectorAll(".option");
+
+selected.addEventListener("click", () => {
+  optionsContainer.classList.toggle("active");
+});
+
+optionsList.forEach(o => {
+  o.addEventListener("click", () => {
+    selected.innerHTML = o.querySelector("label").innerHTML;
+    optionsContainer.classList.remove("active");
+  });
+});
+
+var crteKeys = $('.map1').on('click', function bldKeys() {
+  optionsList.forEach(o => {
+    o.addEventListener("click", () => {
+      const chosen = o.querySelector(".slctCat").value;
+      slctCat = chosen;
+      selected.setAttribute("value", chosen);
+    });
+  });
+});
+
+  toggleDisplay();
+
+
+
+
+
+  <div id="srchCongDist">
+    <div id="srchCongDistLabel">
+      <h4 id="lblCongDist">Congressional District</h4>
+    </div>
+    <div id="srchCongDistError" class="errorMsg"></div>
+    <div id="srchCongDistProject" class="form-group has-error">
+      <div class="">
+        <input
+          type="text"
+          id="txtFindCongDist"
+          class="form-control"
+          placeholder="CongDistID"
+        />
+      </div>
+      <div class="">
+        <button
+          id="btnFindCongDist"
+          class="btn btn-primary btn-block"
+          disabled
+        >
+          Find Congressional District
+        </button>
+      </div>
+    </div>
+    <div class="" id="srchCongDistData"></div>
+  </div>
+  <div id="srchZipCode">
+    <div id="srchZipCodeLabel">
+      <h4 id="lblZipCode">Zip Code</h4>
+    </div>
+    <div id="srchZipCodeError" class="errorMsg"></div>
+    <div id="srchZipCodeProject" class="form-group has-error">
+      <div class="">
+        <input
+          type="text"
+          id="txtFindZipCode"
+          class="form-control"
+          placeholder="ZipCodeID"
+        />
+      </div>
+      <div class="">
+        <button
+          id="btnFindZipCode"
+          class="btn btn-primary btn-block"
+          disabled
+        >
+          Find Zip Code
+        </button>
+      </div>
+    </div>
+    <div class="" id="srchZipCodeData"></div>
+  </div>
+  <div id="srchReset">
+    <div id="srchResetLabel">
+      <h4 id="lblReset">Reset</h4>
+    </div>
+    <div>
+      <button id="btnReset" class="btn btn-warning btn-block">
+        Reset Map
+      </button>
+    </div>
+  </div>
+  <!-- #srchReset -->
+
+
+
+
+  
+  <div class="srchGrpNTAMap" id="srchNTA">
+    <label for="">Select a NTA Geography</label>
+    <div class="select-box">
+      <div class="options-container srchDrpNTAMap">
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="nta" />
+          <label for="nta">NTA - NYC</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="ntaBK" />
+          <label for="ntaBK">NTA - BK</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="ntaQN" />
+          <label for="ntaQN">NTA - QN</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="ntaMN" />
+          <label for="ntaMN">NTA - MN</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="ntaBX" />
+          <label for="ntaBX">NTA - BX</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTAMap" value="ntaSI" />
+          <label for="ntaSI">NTA - SI</label>
+        </div>
+      </div>
+      <!-- .options-container -->
+      <div class="srchSelected">Select a NTA Geography</div>
+    </div>
+    <!-- .select-box -->
+  </div>
+  <div class="srchGrpNTARatio" id="srchNTARatio">
+    <label for="">Select a Ratio</label>
+    <div class="select-box">
+      <div class="options-container srchDrpNTARatio">
+        <div class="option">
+          <input type="radio" class="radio srchSlctNTARatio" value="ResRatio" />
+          <label for="ResRatio">Res. Ratio</label>
+        </div>
+      <div class="option">
+          <input type="radio" class="radio srchSlctNTARatio" value="BusRatio" />
+          <label for="BusRatio">Bus. Ratio</label>
+        </div>
+         <div class="option">
+          <input type="radio" class="radio srchSlctNTARatio" value="OthRatio" />
+          <label for="OthRatio">Oth. Ratio</label>
+        </div>
+      <div class="option">
+          <input type="radio" class="radio srchSlctNTARatio" value="TotRatio" />
+          <label for="TotRatio">Tot. Ratio</label>
+        </div>
+      </div>
+      <!-- .options-container -->
+      <div class="srchSelected">Select a Ratio</div>
+    </div>
+    <!-- .select-box -->
+  </div>

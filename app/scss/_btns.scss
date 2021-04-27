@@ -1,0 +1,224 @@
+/*Style Buttons */
+.color-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btn-not-hover {
+  opacity: .45;
+}
+
+.btn-active::after {
+  position: relative;
+  bottom: .35rem;
+  content: '✓';
+  font-weight: 600;
+}
+
+/*
+source: https://codepen.io/giana/pen/BZaGyP  
+https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+  box-shadow: [inset?] [top] [left] [blur] [size] [color];
+
+  Tips:
+    - We're setting all the blurs to 0 since we want a solid fill.
+    - Add the inset keyword so the box-shadow is on the inside of the element
+    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
+    - Multiple shadows can be stacked
+    - If you're animating multiple shadows, be sure to keep the same number of shadows so the animation is smooth. Otherwise, you'll get something choppy.
+  
+    https://codepen.io/pirrera/pen/bqVeGx
+    https://codepen.io/JavaScriptJunkie/pen/pPRooV
+*/
+
+.btn-clr {
+  cursor: pointer;
+
+  margin: 10px;
+  padding: 10px;
+   // text-decoration: none;
+ // flex: 1 1 auto;
+ // text-align: center;
+ // text-transform: uppercase;
+   //text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  //box-shadow: 0 0 15px rgb(241, 255, 119);
+  //Circle
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+ }
+
+//NUMBER OF CLASSES
+ .btn-increment, .btn-decrement {
+  box-shadow: 0 0 20px #eee;
+  strong {
+    color: white;
+  }
+ }
+
+ .btn-increment {
+background-color: rgba(16, 61, 209, 0.3);
+    &:hover {
+      background-color: rgb(16, 61, 209);
+    }
+ }
+
+ .btn-decrement{
+  background-color: rgba(197, 12, 12, 0.3);
+  &:hover {
+    background-color: rgb(197, 12, 12);
+  }
+ }
+
+ /*** Sequential ***/
+ /** Multi Hue **/
+.BuGn, .tippy-tooltip.bugn-theme, .BuGn2, .tippy-tooltip.bugn2-theme {
+  background-image: linear-gradient(to right, #edf8fb, #66c2a4, #006d2c);
+  color: rgb(44, 42, 42);
+}
+
+.BuPu, .tippy-tooltip.bupu-theme, .BuPu2, .tippy-tooltip.bupu2-theme  {
+  background-image: linear-gradient(to right, #edf8fb, #8c96c6, #810f7c);
+  color: rgb(44, 42, 42);
+}
+
+.GnBu, .tippy-tooltip.gnbu-theme, .GnBu2, .tippy-tooltip.gnbu2-theme {
+  background-image: linear-gradient(to right, #f0f9e8, #7bccc4, #0868ac);
+  color: rgb(53, 50, 50);
+}
+
+.OrRd, .tippy-tooltip.orrd-theme, .OrRd2, .tippy-tooltip.orrd2-theme {
+  background-image: linear-gradient(to right, #fef0d9, #fc8d59, #b30000);
+  color: rgb(53, 50, 50);
+}
+
+.PuBu, .tippy-tooltip.pubu-theme, .PuBu2, .tippy-tooltip.pubu2-theme {
+  background-image: linear-gradient(to right, #f1eef6, #74a9cf,#045a8d);
+  color: rgb(53, 50, 50);
+}
+
+.PuBuGn, .tippy-tooltip.pubugn-theme, .PuBuGn2, .tippy-tooltip.pubugn2-theme {
+  background-image: linear-gradient(to right, #f6eff7, #67a9cf, #016c59);
+  color: rgb(44, 42, 42);
+}
+.PuRd, .tippy-tooltip.purd-theme, .PuRd2, .tippy-tooltip.purd2-theme {
+  background-image: linear-gradient(to right, #f1eef6, #df65b0, #980043);
+  color: rgb(44, 42, 42);
+}
+
+.RdPu, .tippy-tooltip.rdpu-theme, .RdPu2, .tippy-tooltip.rdpu2-theme {
+  background-image: linear-gradient(to right, #feebe2, #f768a1, #7a0177);
+  color: rgb(44, 42, 42);
+}
+
+.YlGn, .tippy-tooltip.ylgn-theme, .YlGn2, .tippy-tooltip.ylgn2-theme {
+  background-image: linear-gradient(to right, #ffffcc, #78c679, #006837);
+  color: rgb(44, 42, 42);
+}
+
+.YlGnBu, .tippy-tooltip.ylgnbu-theme, .YlGnBu2, .tippy-tooltip.ylgnbu2-theme {
+  background-image: linear-gradient(to right, #ffffcc, #41b6c4, #253494);
+  color: rgb(44, 42, 42);
+}
+
+.YlOrBr, .tippy-tooltip.ylorbr-theme, .YlOrBr2, .tippy-tooltip.ylorbr2-theme {
+  background-image: linear-gradient(to right, #ffffd4, #fe9929, #993404);
+  color: rgb(44, 42, 42);
+}
+
+.YlOrRd, .tippy-tooltip.ylorrd-theme, .YlOrRd2, .tippy-tooltip.ylorrd2-theme {
+  background-image: linear-gradient(to right, #ffffb2, #fd8d3c, #bd0026);
+  color: rgb(44, 42, 42);
+}
+
+/** Single Hue **/
+.Blues, .tippy-tooltip.blues-theme, .Blues2, .tippy-tooltip.blues2-theme {
+  background-image: linear-gradient(to right, #eff3ff, #6baed6, #08519c);
+  color: rgb(44, 42, 42);
+}
+
+.Greens, .tippy-tooltip.greens-theme, .Greens2, .tippy-tooltip.greens2-theme {
+  background-image: linear-gradient(to right, #edf8e9, #74c476, #006d2c);
+  color: rgb(44, 42, 42);
+}
+
+.Oranges, .tippy-tooltip.oranges-theme, .Oranges2, .tippy-tooltip.oranges2-theme {
+  background-image: linear-gradient(to right, #feedde, #fd8d3c, #a63603);
+  color: rgb(44, 42, 42);
+}
+
+.Purples, .tippy-tooltip.purples-theme, .Purples2, .tippy-tooltip.purples2-theme {
+  background-image: linear-gradient(to right, #f2f0f7, #9e9ac8, #54278f);
+  color: rgb(44, 42, 42);
+}
+
+.Reds, .tippy-tooltip.reds-theme, .Reds2, .tippy-tooltip.reds2-theme {
+  background-image: linear-gradient(to right, #fee5d9, #fb6a4a, #a50f15);
+  color: rgb(44, 42, 42);
+}
+
+ /*** Diverging  ***/
+.BrBG, .tippy-tooltip.brbg-theme, .BrBG2, .tippy-tooltip.brbg2-theme {
+  background-image: linear-gradient(to right, #a6611a, #f5f5f5, #018571);
+  color: rgb(44, 42, 42);
+}
+
+.PRGn, .tippy-tooltip.prgn-theme, .PRGn2, .tippy-tooltip.prgn2-theme {
+  background-image: linear-gradient(to right, #7b3294, #f7f7f7, #008837);
+  color: rgb(44, 42, 42);
+  
+}
+
+.PuOr, .tippy-tooltip.puor-theme, .PuOr2, .tippy-tooltip.puor2-theme {
+  background-image: linear-gradient(to right, #e66101, #f7f7f7, #5e3c99);
+  color: rgb(44, 42, 42);
+}
+
+.RdBu, .tippy-tooltip.rdbu-theme, .RdBu2, .tippy-tooltip.rdbu2-theme {
+  background-image: linear-gradient(to right, #ca0020, #f7f7f7, #0571b0);
+  color: rgb(44, 42, 42);
+}
+
+.RdYlGn, .tippy-tooltip.rdylgn-theme, .RdYlGn2, .tippy-tooltip.rdylgn2-theme {
+  background-image: linear-gradient(to right, #d7191c, #ffffbf, #1a9641);
+  color: rgb(44, 42, 42);
+}
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.chngClassify.active {
+  background-color: purple;
+  color: white;
+}
+.chngNumClasses.active {
+  background-color: purple;
+  color: white;
+}
+.color-box > *:nth-child(1) {
+  flex: 1 1 25%;
+}
+
+.color-box > *:nth-child(2) {
+  flex: 1 1 25%;
+}
+.color-box > *:nth-child(3) {
+  flex: 1 1 25%;
+}
+.color-box > *:nth-child(4) {
+  flex: 1 1 25%;
+}
+
+.color-box > *:nth-child(5) {
+  flex: 1 1 25%;
+}

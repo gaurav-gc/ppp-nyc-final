@@ -1,0 +1,66 @@
+#wrapper, #wrapper2, #acknowledgement2 {
+  p{
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+#accordionInfo, #accordionInfo2 {
+  .card {
+    background-color: rgb(1, 50, 56);
+    :hover {
+      background-color: rgb(7, 98, 110);
+  }
+    a.card-link {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+  }
+  .list-group {
+    #infoTxt{
+      margin-left: 15px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    #infoTxt:hover{
+      background-color: rgb(38, 1, 49);
+      color: white;
+    }
+    .list-group-item{
+      text-decoration: none;
+      color: black;
+    }
+    .list-group-item:hover {
+      background-color: rgb(38, 1, 49);
+      color: white;
+      text-decoration: none;
+      div:hover {
+      background-color: rgb(38, 1, 49);
+      color: white;
+      }
+    }
+
+  }
+  }
+}
+
+
+//Data Summary Cards 
+#search {
+  .card {
+    h3 {
+      text-align: center;
+      margin-top: 0;
+      text-decoration: underline;
+      text-transform: capitalize;
+
+    }
+  .cardTitle, .cardTitle2, .cardSubTitle, .cardSubTitle2 {
+    text-transform: capitalize;
+    color: black;
+  }
+  }
+}
+
+
+

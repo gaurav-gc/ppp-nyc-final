@@ -1,0 +1,64 @@
+h2 {
+  color: black;
+  font-weight: 900;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  font-size: 20px;
+  text-decoration: lightslategray;
+  text-transform: uppercase;
+}
+
+/* headlines with lines for h2 
+source: https://stackoverflow.com/questions/15557627/heading-with-horizontal-line-on-either-side*/
+.decorated{
+  overflow: hidden;
+  text-align: center;
+}
+.decorated > span{
+ position: relative;
+ display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+ content: '';
+ position: absolute;
+ top: 50%;
+ border-bottom: 2px solid;
+ width: 100vw;
+ margin: 0 20px;
+}
+.decorated > span:before{
+ right: 100%;
+}
+.decorated > span:after{
+ left: 100%;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: 620;
+}
+
+h4 {
+  text-decoration: underline;
+  margin-bottom: .25rem;
+  margin-top: .25rem;
+  font-size: 16px;
+
+}
+
+h5 {
+  font-size: 14.5px;
+  font-style: italic;
+}
+
+h6 {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 620;
+  margin-bottom: .15rem;
+  margin-top: .15rem;
+ 
+}
