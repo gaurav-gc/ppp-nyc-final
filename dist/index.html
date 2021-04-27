@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPP:NYC</title>
+    <!---  Leaflet  -->
+    <link rel="stylesheet" href="../src/leaflet.css?t=1619546188664" />
+   
+    <!--- PLUGINS --->
+    <!--- Easy Button --->
+    <link rel="stylesheet" href="../plugins/EasyButton/easy-button.css?t=1619546188664" />
+
+    <!--- Sidebar-V2 -->
+    <link
+      rel="stylesheet"
+      href="../plugins/leaflet-sidebar-v2-master/leaflet-sidebar.min.css?t=1619546188664"
+    />
+
+     <!--- Leaflet Zoom Home -->
+     <link rel="stylesheet" href="../plugins/leaflet.zoomhome-master/leaflet.zoomhome.css?t=1619546188664">
+
+<!-- Leaflet Social Share -->
+<link rel="stylesheet" href="../plugins/Leaflet.Social-master/leaflet.social.css?t=1619546188664">
+<!-- Bootsrap Switch -->
+
+<link rel="stylesheet" href="../plugins/bootstrap-switch-button-master/bootstrap-switch-button.min.css?t=1619546188664"/>
+
+    <!--- jQuery UI-->
+
+    <link rel="stylesheet" href="../src/jquery-ui.min.css?t=1619546188664" />
+
+    <!---  Bootstrap  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../app/css/style.css?t=1619546188664" />
+    <!--- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!--------------------------------------------- LEFT SIDE BAR ---------------------------------------------------------->
+        <div
+          id="sidebar"
+          class="leaflet-sidebar leaflet-control leaflet-sidebar-left"
+        >
+        <!-- Container/Row -- need to add this for second map -->
+          <!-- NAV TABS -->
+          <div class="leaflet-sidebar-tabs">
+            <ul role="tablist">
+              <li id="home">
+                <a href="#home" role="tab"><i class="fas fa-map"></i></a>
+              </li>
+              <li id="search">
+                <a href="#search" role="tab"
+                  ><i class="fas fa-search-location"></i
+                ></a>
+              </li>
+              <li id="info">
+                <a href="#info" role="tab"
+                  ><i class="fas fa-info-circle"></i
+                ></a>
+              </li>
+              <li id="help">
+                <a href="#help" role="tab"
+                  ><i class="fas fa-globe"></i
+                ></a>
+              </li>
+            </ul>
+            <!--tablist-->
+          </div>
+          <!---.leaflet-sidebar-tabs--->
+          <!--- TAB PANES --->
+          <div class="leaflet-sidebar-content">
+            <div class="leaflet-sidebar-pane" id="home">
+              <h1 class="leaflet-sidebar-header">
+                MAP1
+                <span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+              </h1>
+              <h2 class="decorated"><span>Build Map</span></h2>
+              <h6><label for="">Select a Category</label></h6>
+              <div class="select-box slctGrps" id="catTT">
+                <div class="options-container drpCat">
+                </div>
+                <!-- .options-container -->
+                <div class="selected">Please Select</div>
+              </div>
+              <!-- .select-box -->
+              <div class="grpMet">
+                <h6><label for="">Select a Metric</label></h6>
+                <div class="select-box" id ="metTT">
+                  <div class="options-container drpMet" id="slctMet">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!---CATEGORIES--->
+              <div class="grpCat" id="btype">
+                <h6><label for="">Business Type</label></h6>
+                <div class="select-box" id="btypeTT">
+                  <div class="options-container drpAttr"></div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!-- catGrps -->
+              <div class="grpCat" id="gender">
+                <h6><label for="">Gender</label></h6>
+                <div class="select-box"id="genderTT">
+                  <div class="options-container drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat" id="nonprofit">
+                <h6><label for="">Nonprofit</label></h6>
+                <div class="select-box" id="nonprofitTT">
+                  <div class="options-container nonprofit drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+              </div>
+              <div class="grpCat" id="lender">
+                <h6><label for="">Top 6 Lenders</label></h6>
+                <div class="select-box" id="lenderTT">
+                  <div class="options-container lender drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat" id="vet">
+                <h6><label for="">Veteran</label></h6>
+                <div class="select-box" id="vetTT">
+                  <div class="options-container vet drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat" id="one50k">
+                <h6><label for="">Greater Than 150K</label></h6>
+                <div class="select-box" id="one50kTT">
+                  <div class="options-container one50k drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat" id="race">
+                <h6><label for="">Race</label></h6>
+                <div class="select-box" id="raceTT">
+                  <div class="options-container race drpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Please Select</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!---.category-->
+              <!--- SELECT MAP --->
+              <div class="grpMap">
+                <h6><label for="">Select a Geography</label></h6>
+                <div class="select-box" id="mapTT">
+                  <div class="options-container drpMap">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Select a Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpNTAMap" id="nta">
+                <h6><label for="">Select a NTA Geography</label></h6>
+                <div class="select-box" id="ntaTT">
+                  <div class="options-container drpNTAMap">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Select a NTA Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpNTARatio" id="ntaRatio">
+                <h6><label for="">Select a Ratio</label></h6>
+                <div class="select-box" id="ntaRatioTT">
+                  <div class="options-container drpNTARatio">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected">Select a Ratio</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <h2 class="decorated"><span>Style Map</span></h2>
+              <h3>Color Scheme</h3>
+              <h4>Sequential</h4>
+              <h5>Multi-Hue</h5>
+              <div
+                class="toggle seqMultiHue"
+              >
+              </div>
+              <h5>Single-Hue</h5>
+              <div
+                class="toggle seqSingleHue"
+              >
+              </div>
+              <h4>Diverging</h4>
+              <div
+                class="toggle divHue"
+              >
+              </div>
+              <h3>Classifcation Method</h3>
+              <div class="text-center" id='switchTT'>
+              <input type="checkbox" class="chngClassify" id="bs-switch-1" checked/>
+            </div>
+              <h3>Number of Classes</h3>
+              <div id="numTT">
+              <input required type="number" id="numClass" value="3" min="3" max="6"/>
+            </div>
+              <!--- select map --->
+            </div>
+            <!--- .leaflet-sidebar-pane #home --->
+            <div class="leaflet-sidebar-pane" id="search">
+              <h1 class="leaflet-sidebar-header">
+                Information Search<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+                <h2 class="decorated"><span>Information Search</span></h2>
+              </h1>
+              <h6><label for="">Select a Category</label></h6>
+              <div class="select-box srchGrpCat" id="srchgrpsTT">
+                <div class="options-container srchDrpCat">
+                </div>
+                <!-- .options-container -->
+                <div class="srchSelected">Select a Category</div>
+              </div>
+              <!-- .select-box -->
+              <!---CATEGORIES--->
+              <div class="srchGrpAttr" id="srchbtype">
+                <h6><label for="">Business Type</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select a Business Type</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!-- attrGrps -->
+              <div class="srchGrpAttr" id="srchgender">
+                <h6><label for="">Gender</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select a Gender</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr" id="srchnonprofit">
+                <h6><label for="">Nonprofit</label></h6>
+                <div class="select-box">
+                  <div class="options-container nonprofit srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select a Nonprofit</div>
+                </div>
+              </div>
+              <div class="srchGrpAttr" id="srchlender">
+                <h6><label for="">Top 6 Lenders</label></h6>
+                <div class="select-box">
+                  <div class="options-container lender srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select To 5 Lenders</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr" id="srchvet">
+                <h6><label for="">Veteran</label></h6>
+                <div class="select-box">
+                  <div class="options-container vet srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select Veteran</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr" id="srchone50k">
+                <h6><label for="">Greater Than 150K</label></h6>
+                <div class="select-box">
+                  <div class="options-container one50k srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select Greater Than 150k</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr" id="srchrace">
+                <h6><label for="">Race</label></h6>
+                <div class="select-box">
+                  <div class="options-container race srchDrpAttr">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select Race</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpMap">
+                <h6><label for="">Select a Geography</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpMap"></div>
+                  <!-- .options-container -->
+                  <div class="srchSelected">Select a Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+
+              <!--- DROPDOWN SEARCH FUNCTION -->
+              <div class="srchGrpGeo" id="srchBoro">
+                <h6><label for="">Search a Borough</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpBoro">
+                  </div>
+                  <div class="srchSelected">Search a Borough</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchCongDist">
+                <h6><label for="">Search a Congressional District</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpCongDist"></div>
+                  <div class="srchSelected">Search a Congressional District</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchZCTA">
+                <h6><label for="">Search a ZCTA</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpZCTA"></div>
+                  <div class="srchSelected">Search a ZCTA</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTA">
+                <h6><label for="">Search a NTA</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTA"></div>
+                  <div class="srchSelected">Search a NTA</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTABK">
+                <h6><label for="">Search a NTABK</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTABK"></div>
+                  <div class="srchSelected">Search a NTABK</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTAQN">
+                <h6><label for="">Search a NTAQN</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTAQN"></div>
+                  <div class="srchSelected">Search a NTAQN</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTAMN">
+                <h6><label for="">Search a NTAMN</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTAMN"></div>
+                  <div class="srchSelected">Search a NTAMN</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTABX">
+                <h6><label for="">Search a NTABX</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTABX"></div>
+                  <div class="srchSelected">Search a NTABX</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo" id="srchNTASI">
+                <h6><label for="">Search a NTASI</label></h6>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTASI"></div>
+                  <div class="srchSelected">Search a NTASI</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!--- SEARCH BUTTON -->
+              <div class="toggle">
+                <button type="button" class="btn btn-primary" id="srchBtn" value="srch">
+                  SEARCH
+                </button>
+               </div>
+               <!--- INFO SRCH CARD -->
+               <div class="card geoCard" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-text">Data Summary</h3>
+                  <h6 class="card-title"><span class="cardTitle"></span></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><span class="cardSubTitle"></span></h6>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtVal"></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtVal"></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntVal"></span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card ntaCard" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-text">Data Summary</h3>
+                  <h6 class="card-title"><span class="cardTitle"></span></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><span class="cardSubTitle"></span></h6>
+                <div class="card-header">
+                  Residential Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtResRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtResRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntResRatioVal"></span></li>
+                </ul>
+                <div class="card-header">
+                  Business Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtBusRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtBusRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntBusRatioVal"></span></li>
+                </ul>
+                <div class="card-header">
+                  Other Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtOthRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtOthRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntOthRatioVal"></span></li>
+                </ul>
+                <div class="card-header">
+                  Total Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtTotRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtTotRatioVal"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntTotRatioVal"></span></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            <!---.leaflet-sidebar-pane #search--->
+            <div class="leaflet-sidebar-pane" id="help">
+              <h1 class="leaflet-sidebar-header">
+                Help<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+              </h1>
+            </div>
+            <!---.leaflet-sidebar-pane #help--->
+            <div class="leaflet-sidebar-pane" id="info">
+              <h1 class="leaflet-sidebar-header">
+                Info<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+              </h1>
+              <h2 class="decorated infoPar"><span>Information & Methodology</span></h2>  
+                <span id="wrapper">
+                </span>
+              <div class="accordion" id="accordionInfo">
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header infoCard" data-toggle="collapse" href="#collapseCat" >
+                    <h6 class="mb-0">Category</h6>
+                  </a>
+                  <div id="collapseCat" class="collapse" aria-labelledby="headingCat" data-parent="#accordionInfo">
+                    <div class="accordion" id="accordionCat">
+                      <div class="list-group list-group-flush infoCat">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header infoCard" data-toggle="collapse" href="#collapseMet" >
+                    <h6 class="mb-0">Metric</h6>
+                  </a>
+                  <div id="collapseMet" class="collapse" aria-labelledby="headingMet" data-parent="#accordionInfo">
+                    <div class="accordion" id="accordionMet">
+                      <div class="list-group list-group-flush infoMet">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header" data-toggle="collapse" href="#collapseGeo" >
+                    <h6 class="mb-0">Geography</h6>
+                  </a>
+                  <div id="collapseGeo" class="collapse" aria-labelledby="headingGeo" data-parent="#accordionInfo">
+                    <div class="accordion" id="accordionGeo">
+                      <div class="list-group list-group-flush infoGeo">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header" data-toggle="collapse" href="#collapseRat" >
+                    <h6 class="mb-0">Ratio</h6>
+                  </a>
+                  <div id="collapseRat" class="collapse" aria-labelledby="headingRat" data-parent="#accordionInfo">
+                    <div class="accordion" id="accordionRat">
+                      <div class="list-group list-group-flush infoRat">
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+              </div><!-- .accordion #accordionInfo -->
+            </div>
+            <!---.leaflet-sidebar-pane #info--->
+          </div>
+          <!--- .leaflet-sidebar-content --->
+        </div>
+        <!---#sidebar .leaflet-sidebar-left -->
+        <!--------------------------------------------- RIGHT SIDE BAR ---------------------------------------------------------->
+        <div
+          id="sidebar"
+          class="leaflet-sidebar leaflet-control leaflet-sidebar-right"
+        >
+          <!-- NAV TABS -->
+          <div class="leaflet-sidebar-tabs">
+            <ul role="tablist">
+              <li id="home">
+                <a href="#home" role="tab"><i class="fas fa-map"></i></a>
+              </li>
+              <li id="search">
+                <a href="#search" role="tab"
+                  ><i class="fas fa-search-location"></i
+                ></a>
+              </li>
+              <li id="info">
+                <a href="#info" role="tab"
+                  ><i class="fas fa-info-circle"></i
+                ></a>
+              </li>
+              <li id="help">
+                <a href="#help" role="tab"
+                  ><i class="fas fa-globe"></i
+                ></a>
+              </li>
+            </ul>
+            <!--tablist-->
+          </div>
+          <!---.leaflet-sidebar-tabs--->
+          <!--- TAB PANES --->
+          <div class="leaflet-sidebar-content">
+            <div class="leaflet-sidebar-pane" id="home">
+              <h1 class="leaflet-sidebar-header">
+                MAP2
+                <span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-right"></i
+                ></span>
+              </h1>
+              <h2 class="decorated"><span>Build Map</span></h2>
+              <h6><label for="">Select a Category</label></h6>
+              <div class="select-box slctGrps2" id="catTT">
+                <div class="options-container drpCat2">
+                </div>
+                <!-- .options-container -->
+                <div class="selected2">Select a Category</div>
+              </div>
+              <!-- .select-box -->
+              <div class="grpMet2">
+                <h6><label for="">Select a Metric</label></h6>
+                <div class="select-box" id ="metTT">
+                  <div class="options-container drpMet2" id="slctMet2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a Metric</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!---CATEGORIES--->
+              <div class="grpCat2" id="btype2">
+                <h6><label for="">Business Type</label></h6>
+                <div class="select-box" id="btypeTT">
+                  <div class="options-container drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a Business Type</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!-- catGrps -->
+              <div class="grpCat2" id="gender2">
+                <h6><label for="">Gender</label></h6>
+                <div class="select-box"id="genderTT">
+                  <div class="options-container drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a Gender</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat2" id="nonprofit2">
+                <h6><label for="">Nonprofit</label></h6>
+                <div class="select-box" id="nonprofitTT">
+                  <div class="options-container drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a Nonprofit</div>
+                </div>
+              </div>
+              <div class="grpCat2" id="lender2">
+                <h6><label for="">Top 6 Lenders</label></h6>
+                <div class="select-box" id="lenderTT">
+                  <div class="options-container lender drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select To 5 Lenders</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat2" id="vet2">
+                <h6><label for="">Veteran</label></h6>
+                <div class="select-box" id="vetTT">
+                  <div class="options-container vet drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select Veteran</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat2" id="one50k2">
+                <h6><label for="">Greater Than 150K</label></h6>
+                <div class="select-box" id="one50kTT">
+                  <div class="options-container one50k drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select Greater Than 150k</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat2" id="race2">
+                <h6><label for="">Greater Than 150K</label></h6>
+                <div class="select-box" id="raceTT">
+                  <div class="options-container race drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select Race</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpCat2" id="race2">
+                <h6><label for="">Race</label></h6>
+                <div class="select-box" id="raceTT">
+                  <div class="options-container race drpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select Race</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!---.category-->
+              <!--- SELECT MAP --->
+              <div class="grpMap2">
+                <h6><label for="">Select a Geography</label></h6>
+                <div class="select-box" id="mapTT">
+                  <div class="options-container drpMap2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpNTAMap2" id="nta2">
+                <h6><label for="">Select a NTA Geography</label></h6>
+                <div class="select-box" id="ntaTT">
+                  <div class="options-container drpNTAMap2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="selected2">Select a NTA Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="grpNTARatio2" id="ntaRatio2">
+                <h6><label for="">Select a Ratio</label></h6>
+                <div class="select-box" id="ntaRatioTT">
+                  <div class="options-container drpNTARatio2">
+                  </div>
+                  <!-- .options-container -->
+                    <!-- .options-container -->
+                  <div class="selected2">Select a Ratio</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <h2 class="decorated"><span>Style Map</span></h2>
+              <h3>Color Scheme</h3>
+              <h4>Sequential</h4>
+              <h5>Multi-Hue</h5>
+              <div
+                class="toggle seqMultiHue2"
+              >
+              </div>
+              <h5>Single-Hue</h5>
+              <div
+                class="toggle seqSingleHue2"
+              >
+              </div>
+              <h4>Diverging</h4>
+              <div
+                class="toggle divHue2"
+              >
+              </div>
+              <h3>Classifcation Method</h3>
+              <div class="text-center" id='switchTT'>
+                <input type="checkbox" class="chngClassify2" id="bs-switch-2" checked/>
+              </div>
+              <h3>Number of Classes</h3>
+              <div id="numTT">
+                <input required type="number" id="numClass2" value="3" min="3" max="6"/>
+              </div>
+              <!--- select map --->
+            </div>
+            <!--- .leaflet-sidebar-pane #home --->
+            <div class="leaflet-sidebar-pane" id="search">
+              <h1 class="leaflet-sidebar-header">
+                Information Search<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+                <h2 class="decorated"><span>Information Search</span></h2>
+              </h1>
+              <h6><label for="">Select a Category</label></h6>
+              <div class="select-box srchGrpCat2" id="srchgrpsTT">
+                <div class="options-container srchDrpCat2">
+                </div>
+                <!-- .options-container -->
+                <div class="srchSelected2">Select a Category</div>
+              </div>
+              <!-- .select-box -->
+              <!---CATEGORIES--->
+              <div class="srchGrpAttr2" id="srchbtype2">
+                <label for="">Business Type</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select a Business Type</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!-- catGrps -->
+              <div class="srchGrpAttr2" id="srchgender2">
+                <label for="">Gender</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select a Gender</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr2" id="srchnonprofit2">
+                <label for="">Nonprofit</label>
+                <div class="select-box">
+                  <div class="options-container nonprofit srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select a Nonprofit</div>
+                </div>
+              </div>
+              <div class="srchGrpAttr2" id="srchlender2">
+                <label for="">Top 6 Lenders</label>
+                <div class="select-box">
+                  <div class="options-container lender srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select To 5 Lenders</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr2" id="srchvet2">
+                <label for="">Veteran</label>
+                <div class="select-box">
+                  <div class="options-container vet srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select Veteran</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpAttr2" id="srchone50k2">
+                <label for="">Greater Than 150K</label>
+                <div class="select-box">
+                  <div class="options-container one50k srchDrpAttr2">
+                  </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select Greater Than 150k</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpMap2">
+                <label for="">Select a Geography</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpMap2">
+                    </div>
+                  <!-- .options-container -->
+                  <div class="srchSelected2">Select a Geography</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!--- DROPDOWN SEARCH FUNCTION -->
+              <div class="srchGrpGeo2" id="srchBoro2">
+                <label for="">Search a Borough</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpBoro2">
+                  </div>
+                  <div class="srchSelected2">Search a Borough</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchCongDist2">
+                <label for="">Search a Congressional District</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpCongDist2"></div>
+                  <div class="srchSelected2">Search a Congressional District</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchZCTA2">
+                <label for="">Search a ZCTA</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpZCTA2"></div>
+                  <div class="srchSelected2">Search a ZCTA</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTA2">
+                <label for="">Search a NTA</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTA2"></div>
+                  <div class="srchSelected2">Search a NTA</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTABK2">
+                <label for="">Search a NTABK</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTABK2"></div>
+                  <div class="srchSelected2">Search a NTABK</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTAQN2">
+                <label for="">Search a NTAQN</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTAQN2"></div>
+                  <div class="srchSelected2">Search a NTAQN</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTAMN2">
+                <label for="">Search a NTAMN</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTAMN2"></div>
+                  <div class="srchSelected2">Search a NTAMN</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTABX2">
+                <label for="">Search a NTABX</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTABX2"></div>
+                  <div class="srchSelected2">Search a NTABX</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <div class="srchGrpGeo2" id="srchNTASI2">
+                <label for="">Search a NTASI</label>
+                <div class="select-box">
+                  <div class="options-container srchDrpNTASI2"></div>
+                  <div class="srchSelected2">Search a NTASI</div>
+                </div>
+                <!-- .select-box -->
+              </div>
+              <!--- SEARCH BUTTON -->
+              <div class="toggle">
+                <button type="button" class="btn btn-primary" id="srchBtn2" value="srch">
+                  SEARCH
+                </button>
+               </div>
+               <!--- INFO SRCH CARD -->
+               <div class="card geoCard2" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-text">Data Summary</h3>
+                  <h6 class="card-title"><span class="cardTitle2"></span></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><span class="cardSubTitle2"></span></h6>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtVal2"></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtVal2"></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntVal2"></span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card ntaCard2" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-text">Data Summary</h3>
+                  <h6 class="card-title"><span class="cardTitle2"></span></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><span class="cardSubTitle2"></span></h6>
+                <div class="card-header">
+                  Residential Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtResRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtResRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntResRatioVal2"></span></li>
+                </ul>
+                <div class="card-header">
+                  Business Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtBusRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtBusRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntBusRatioVal2"></span></li>
+                </ul>
+                <div class="card-header">
+                  Other Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtOthRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtOthRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntOthRatioVal2"></span></li>
+                </ul>
+                <div class="card-header">
+                  Total Ratio
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Loan Amount:<span class="srchlnamtTotRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Jobs Retained:<span class="srchjbrtTotRatioVal2"></span></li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">Business Count:<span class="srchCntTotRatioVal2"></span></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            <!---.leaflet-sidebar-pane #search--->
+            <div class="leaflet-sidebar-pane" id="info">
+              <h1 class="leaflet-sidebar-header">
+                Info<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+              </h1>
+              <h2 class="decorated"><span>Information & Methodology</span></h2>
+                <span id="wrapper2"></span>
+              <div class="accordion" id="accordionInfo2">
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header infoCard" data-toggle="collapse" href="#collapseCat2" >
+                    <h6 class="mb-0">Category</h6>
+                  </a>
+                  <div id="collapseCat2" class="collapse" aria-labelledby="headingCat2" data-parent="#accordionInfo2">
+                    <div class="accordion" id="accordionCat2">
+                      <div class="list-group list-group-flush infoCat2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header infoCard" data-toggle="collapse" href="#collapseMet2" >
+                    <h6 class="mb-0">Metric</h6>
+                  </a>
+                  <div id="collapseMet2" class="collapse" aria-labelledby="headingMet2" data-parent="#accordionInfo2">
+                    <div class="accordion" id="accordionMet2">
+                      <div class="list-group list-group-flush infoMet2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header" data-toggle="collapse" href="#collapseGeo2" >
+                    <h6 class="mb-0">Geography</h6>
+                  </a>
+                  <div id="collapseGeo2" class="collapse" aria-labelledby="headingGeo2" data-parent="#accordionInfo2">
+                    <div class="accordion" id="accordionGeo2">
+                      <div class="list-group list-group-flush infoGeo2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-2 mt-2">
+                  <a class="card-link card-header" data-toggle="collapse" href="#collapseRat2" >
+                    <h6 class="mb-0">Ratio</h6>
+                  </a>
+                  <div id="collapseRat2" class="collapse" aria-labelledby="headingRat2" data-parent="#accordionInfo2">
+                    <div class="accordion" id="accordionRat2">
+                      <div class="list-group list-group-flush infoRat2">
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+              </div><!-- .accordion #accordionInfo -->
+            </div>
+            <div class="leaflet-sidebar-pane" id="help">
+              <h1 class="leaflet-sidebar-header">
+                Acknowledgements & Sources<span class="leaflet-sidebar-close"
+                  ><i class="fa fa-caret-left"></i
+                ></span>
+              </h1>
+              <h2 class="decorated"><span>Sources</span></h2>
+              <span id="acknowledgement2">
+                <p>
+                  SBA Paycheck Protection Program Loan Level Data
+                </p>
+                <p>
+                  This map could not be created without the excellent classybrew library that Joshua Tanner created. classybrew lets you not only choose from several statistical algorithms but also has colorbrewer color palettes built in to quickly generate choropleth maps.
+                </p>
+                <p>
+                  Special thanks to my life partner Melissa, who not only provided excellent support & design insight, but, as a true and true New Yorker representing BK, took me to school on the official boundaries and geographies of a NYC neighborhoods.
+                </p>
+              </span>
+            </div>
+            <!---.leaflet-sidebar-pane #help--->
+            <!---.leaflet-sidebar-pane #messages--->
+          </div>
+          <!--- .leaflet-sidebar-content --->
+        </div>
+        <!---#sidebar .leaflet-sidebar-right -->
+        <!---MAP DIVS--->
+        <div id="map1" class="map1 col"></div>
+        <div id="map2" class="map2 col"></div>
+      </div>
+      <!-- row -->
+    </div>
+    <!--- container-fluid  -->
+  </body>
+
+  <!---  Leaflet  -->
+  <script src="../src/leaflet-src.js?t=1619546188664"></script>
+  <!--- PLUGINS --->
+  <script src="../plugins/EasyButton/easy-button.js?t=1619546188664"></script>
+
+  <!--- Leafet AJAX-->
+  <script src="../plugins/Leaflet-Ajax/leaflet.ajax.min.js?t=1619546188664"></script>
+
+  <!--- Sidebar-V2 -->
+  <script src="../plugins/leaflet-sidebar-v2-master/leaflet-sidebar.min.js?t=1619546188664"></script>
+
+  <!--- Leaflet Providers-->
+     <script src="../plugins/Leaflet-Providers/leaflet-providers.js?t=1619546188664"></script>
+ 
+  <!--- Leaflet Get Layer -->
+     <script src="../plugins/Leaflet-ActiveLayers/ActiveLayers.js?t=1619546188664"></script>
+
+  <!--- Leaflet Zoom Home -->
+     <script src="../plugins/leaflet.zoomhome-master/leaflet.zoomhome.min.js?t=1619546188664"></script>
+
+  <!-- Leaflet Social Share -->
+<script src="../plugins/Leaflet.Social-master/leaflet.social.js?t=1619546188664"></script>
+
+    <!--- Font Awesome Library -->
+    <script src="../plugins/leaflet.browser.print-master/dist/leaflet.browser.print.min.js?t=1619546188664"></script>
+
+<script src="https://kit.fontawesome.com/18aa424742.js" crossorigin="anonymous"></script>
+
+
+    <!--- Classybrew--->
+    <script src="../js/classybrew/src/classybrew.js?t=1619546188664"></script>
+
+    <!---   jQuery  <script src="../src/jquery-ui.min.js"></script> -->
+    <script src="../src/jquery-3.5.1.min.js?t=1619546188664"></script>
+   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+      integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+      crossorigin="anonymous"
+    ></script>
+ <!---  Bootstrap  -->
+ <script
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+ integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+ crossorigin="anonymous"
+></script>
+  <!--- TIPPY -->
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+    <!-- Bootstrap Input Spinner -->
+    <script src="../plugins/bootstrap-input-spinner-master/src/input-spinner.js?t=1619546188664"></script>
+ <!-- Bootstrap Switch Button -->
+         <script src="../plugins/bootstrap-switch-button-master/bootstrap-switch-button.min.js?t=1619546188664"></script>
+  
+
+    <!---*****************DATA*****************-->
+    <script src="../js/data/congdist.js?t=1619546188664"></script>
+    <script src="../js/data/zcta.js?t=1619546188664"></script>
+    <script src="../js/data/nta.js?t=1619546188664"></script>
+    <script src="../js/data/ntaBK.js?t=1619546188664"></script>
+    <script src="../js/data/ntaQN.js?t=1619546188664"></script>
+    <script src="../js/data/ntaMN.js?t=1619546188664"></script>
+    <script src="../js/data/ntaBX.js?t=1619546188664"></script>
+    <script src="../js/data/ntaSI.js?t=1619546188664"></script>
+    <script src="../js/data/boro.js?t=1619546188664"></script>
+
+  <script type="module" src="../js/index.js?t=1619546188664">
+
+  </script>
+     <!-- Bootstrap Switch -->
+
+ 
+</html>
