@@ -97,38 +97,38 @@ function onEachNTASIFeature2(feature, layer) {
   arNTASI2.push(att.ntaSI.toString());
 }
 
-var lyrBoro2 = L.geoJSON.ajax('../data/boro.geojson', {
+var lyrBoro2 = L.geoJSON.ajax('./data/geojson/boro.geojson', {
   onEachFeature: onEachBoroFeature2,
 })
-var lyrCongDist2 = L.geoJSON.ajax('../data/congdist.geojson', {
+var lyrCongDist2 = L.geoJSON.ajax('./data/geojson/congdist.geojson', {
   onEachFeature: onEachCongDistFeature2,
 });
 
-var lyrZCTA2 = L.geoJSON.ajax('../data/zcta.geojson', {
+var lyrZCTA2 = L.geoJSON.ajax('./data/geojson/zcta.geojson', {
   onEachFeature: onEachZCTAFeature2,
 });
 
-var lyrNTA2 = L.geoJSON.ajax('../data/nta.geojson', {
+var lyrNTA2 = L.geoJSON.ajax('./data/geojson/nta.geojson', {
   onEachFeature: onEachNTAFeature2,
 });
 
-var lyrNTABK2 = L.geoJSON.ajax('../data/ntaBK.geojson', {
+var lyrNTABK2 = L.geoJSON.ajax('./data/geojson/ntaBK.geojson', {
   onEachFeature: onEachNTABKFeature2,
 });
 
-var lyrNTAQN2 = L.geoJSON.ajax('../data/ntaQN.geojson', {
+var lyrNTAQN2 = L.geoJSON.ajax('./data/geojson/ntaQN.geojson', {
   onEachFeature: onEachNTAQNFeature2,
 });
 
-var lyrNTAMN2 = L.geoJSON.ajax('../data/ntaMN.geojson', {
+var lyrNTAMN2 = L.geoJSON.ajax('./data/geojson/ntaMN.geojson', {
   onEachFeature: onEachNTAMNFeature2,
 });
 
-var lyrNTABX2 = L.geoJSON.ajax('../data/ntaBX.geojson', {
+var lyrNTABX2 = L.geoJSON.ajax('./data/geojson/ntaBX.geojson', {
   onEachFeature: onEachNTABXFeature2,
 });
 
-var lyrNTASI2 = L.geoJSON.ajax('../data/ntaSI.geojson', {
+var lyrNTASI2 = L.geoJSON.ajax('./data/geojson/ntaSI.geojson', {
   onEachFeature: onEachNTASIFeature2,
 });
 
