@@ -1,4 +1,4 @@
-var infoParTxt = "<p>The Paycheck Protection Program (PPP) is a loan designed to provide a direct incentive for small businesses to keep their workers on payroll and was established through the Coronavirus Aid, Relief, and Economic Security (CARES) Act on March 27, 2020. The PPP loan level Data for the maps are derived from two datasets from the Small Business Administration (SBA) for loans lent through August 08, 2020. <br><br>The first dataset is PPP loan level data for the state of New York for loans that are less than $150,000. This data is represented in the categories: 'Business Type', 'Gender', 'Nonprofit', 'Veteran' and 'Lender'.<br><br> The second dataset is derived from a dataset of PPP loans of $150,000 and above for all 56 states, territories, and the District of Columbia. This data is represented in the category: 'Greater than 150k'.<br><br>For more information about the impact of PPP loans, the methodology and further analysis please refer to either my Medium or blog post article.</p>"
+var infoParTxt = "<p>The Paycheck Protection Program (PPP) is a loan designed to provide a direct incentive for small businesses to keep their workers on payroll and was established through the Coronavirus Aid, Relief, and Economic Security (CARES) Act on March 27, 2020. The PPP loan level Data for the maps are derived from two datasets from the Small Business Administration (SBA) for loans lent through March XX, 2021. <br><br>.</p>"
 const $infoPar = $('#wrapper, #wrapper2');
 function infoPar () {
   $infoPar.append(infoParTxt);
@@ -17,15 +17,16 @@ var infoCatResult =  infoCatValues.reduce(function(infoCatResult, field, index) 
   return infoCatResult;
 }, {})
 
-var btypeDef = "In NYC, PPP loan recipients represented 16 different business types (1 percent of recipients leaving their business type as unanswered). You are able to visualize the top 6 business types that received 94 percent of PPP loans in NYC. Corporations received the most amount of PPP loans, over $1.8 billion, and represented the largest share of all businesses, 38 percent, or over 55 thousand."
-var genderDef = "88 percent of PPP loan recipients declined to declare whether their business is either female or male owned. However, of the 12 percent that did declare, 9 percent of businesses are male owned, receiving over $559 million (12 percent of total PPP loan funding in NYC), and 3 percent are female owned, receiving over $147 million (or 3 percent of total PPP loan funding in NYC)."
-var nonprofitDef = "In NYC, only 2 percent of all PPP loan recipients identified as a nonprofit - approximately receiving $126 million in PPP loans."
-var lenderDef = "In NYC, PPP loan recipients received loans from 835 different lenders. You are able to visualize the top 6 lenders that loaned 62 percent of all NYC businesses and 59 percent of all PPP loans. JP Morgan Chase Bank loaned the most at $1.2 billion, or 27 percent, to 31 thousand businesses, or 22 percent of all NYC businesses."
-var vetDef = "Only 205 of NYC businesses, or 0.14 percent, identified as veteran owned. Those 205 businesses received only $8.6 million, or 0.19 percent, of all PPP loans."
+var btypeDef = "In NYC, PPP loan recipients represented 20 different business types (less than 1 percent of recipients leaving their business type as unanswered). Corporations, LLCs, and S-Corp businesses received 87 percent of all PPP loans. Corporations received the most amount of PPP loans, over $1.7 billion, and represented the largest share of all businesses, 44 percent, or over 21 thousand."
+var genderDef = "66 percent of PPP loan recipients declined to declare whether their business is either female or male owned. However, of the 34 percent that did declare, 8 percent of businesses are male owned, receiving over $1 billion (26 percent of total PPP loan funding in NYC), and 8 percent are female owned, receiving over $305 million (or 7 percent of total PPP loan funding in NYC)."
+var nonprofitDef = "In NYC, only 3 percent of all PPP loan recipients identified as a nonprofit - approximately receiving $132 million in PPP loans."
+var lenderDef = "In NYC, PPP loan recipients received loans from 569 different lenders. The top 6 lenders that loaned 62 percent of all NYC businesses and 59 percent of all PPP loans are JP Morgan Chase, TD Bank, Citibank, Cross River Bank, Bank of America and Signature Bank. JP Morgan Chase Bank loaned the most at $1.1 billion, or 29 percent, to 14 thousand businesses, or 28 percent of all NYC businesses."
+var vetDef = "Only 304 of NYC businesses, or 0.61 percent, identified as veteran owned. Those 304 businesses received only $24 million, or 0.62 percent, of all PPP loans."
+var raceDef = "81 percent of businesses did not identify a race. Of PPP recipients that did identify a race, 12 percent identified as White. The remaining 7 percent is composed primarily of Asian (5.3 percent) and Black (1.63 percent)."
 var one50kDef =  "NYC businesses that received over $150 thousand of PPP loans only made up 13 percent of all loan recipients. However, these NYC businesses reported 67 percent of all the jobs retained."
 
 
-var infoCatDef = [btypeDef, genderDef, nonprofitDef, lenderDef, vetDef, one50kDef]
+var infoCatDef = [btypeDef, genderDef, nonprofitDef, lenderDef, vetDef, raceDef, one50kDef]
 
 var infoMetValues = ['Loan Amount', 'Jobs Retained', 'Business Count']
 
