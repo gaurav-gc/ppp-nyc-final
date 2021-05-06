@@ -10,7 +10,7 @@ tippy('#metTT', {
   theme: 'default'
 });
 
-//Categories
+/*Categories
 
 tippy('#btypeTT', {
   content: "Select from the 6 business types that received 94% of all PPP loans",
@@ -47,7 +47,7 @@ tippy('#one50kTT', {
   arrow: false, 
   theme: 'default',
 })
-
+*/
 
 tippy('#mapTT', {
   content: "Select from 4 different geographies to create your map. See information panel for details on methodology",
@@ -62,6 +62,7 @@ tippy('#switchTT', {
   theme: 'default'
 });
 
+/*
 //NTA Tooltip
 tippy('#ntaTT', {
   content: 'Select a Neighborhood Tabulation Area (NTA) by borough or county and a Ratio to create map. See information panel for details on methodology',
@@ -75,7 +76,7 @@ tippy('#ntaRatioTT', {
   theme: 'default'
 });
 
-
+*/
 
 //# of Classes
 tippy('#numTT', {

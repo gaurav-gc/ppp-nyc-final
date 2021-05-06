@@ -6,7 +6,6 @@ function infoPar () {
 infoPar();
 
 
-
 var infoCatValues = ['Business Type', 'Gender', 'Nonprofit', 'Lender', 'Veteran', 'Race']
 var infoCatCodes = ['btype', 'gender', 'nonprofit', 'lender', 'vet', 'race']
 
@@ -17,13 +16,13 @@ var infoCatResult =  infoCatValues.reduce(function(infoCatResult, field, index) 
   return infoCatResult;
 }, {})
 
-var btypeDef = "In NYC, PPP loan recipients represented 20 different business types (less than 1 percent of recipients leaving their business type as unanswered). Corporations, LLCs, and S-Corp businesses received 87 percent of all PPP loans. Corporations received the most amount of PPP loans, over $1.7 billion, and represented the largest share of all businesses, 44 percent, or over 21 thousand."
-var genderDef = "66 percent of PPP loan recipients declined to declare whether their business is either female or male owned. However, of the 34 percent that did declare, 8 percent of businesses are male owned, receiving over $1 billion (26 percent of total PPP loan funding in NYC), and 8 percent are female owned, receiving over $305 million (or 7 percent of total PPP loan funding in NYC)."
-var nonprofitDef = "In NYC, only 3 percent of all PPP loan recipients identified as a nonprofit - approximately receiving $132 million in PPP loans."
-var lenderDef = "In NYC, PPP loan recipients received loans from 569 different lenders. The top 6 lenders that loaned 62 percent of all NYC businesses and 59 percent of all PPP loans are JP Morgan Chase, TD Bank, Citibank, Cross River Bank, Bank of America and Signature Bank. JP Morgan Chase Bank loaned the most at $1.1 billion, or 29 percent, to 14 thousand businesses, or 28 percent of all NYC businesses."
-var vetDef = "Only 304 of NYC businesses, or 0.61 percent, identified as veteran owned. Those 304 businesses received only $24 million, or 0.62 percent, of all PPP loans."
-var raceDef = "81 percent of businesses did not identify a race. Of PPP recipients that did identify a race, 12 percent identified as White. The remaining 7 percent is composed primarily of Asian (5.3 percent) and Black (1.63 percent)."
-var one50kDef =  "NYC businesses that received over $150 thousand of PPP loans only made up 13 percent of all loan recipients. However, these NYC businesses reported 67 percent of all the jobs retained."
+var btypeDef = "In NYC, PPP loan recipients represented 21 different business types (less than 1 percent of recipients leaving their business type as unanswered). Corporations, LLCs, and S-Corp businesses received 80 percent of all PPP loans. Corporations received the most amount of PPP loans, over $10.7 billion, and represented the largest share of all NYC businesses, 35.42 percent, or 104,735 businesses."
+var genderDef = "69 percent of PPP loan recipients declined to declare whether their business is either female or male owned. However, of the 31 percent that did declare, 22 percent of businesses are male owned, receiving over $6.3 billion (22 percent of total PPP loan funding in NYC), and 9 percent are female owned, receiving over $1.6 billion (or 6 percent of total PPP loan funding in NYC)."
+var nonprofitDef = "In NYC, only 2 percent of all PPP loan recipients identified as a nonprofit - approximately receiving $2.6 billion in PPP loans."
+var lenderDef = "In NYC, PPP loan recipients received loans from 999 different lenders. The top 6 lenders that loaned just over 52 percent of all NYC businesses and all PPP loans are JP Morgan Chase, TD Bank, Citibank, Cross River Bank, Bank of America and Signature Bank. JP Morgan Chase Bank loaned the most at $6.9 billion (24 percent) to over 59 thousand NYC businesses (20 percent)."
+var vetDef = "Only 1423 of NYC businesses, or 0.48 percent, identified as veteran owned. Those 1423 businesses received only $170 million, or 0.59 percent, of all PPP loans."
+var raceDef = "81 percent of businesses did not identify a race. Of PPP recipients that did identify a race, 10 percent identified as White. The remaining 9 percent is composed primarily of Asian (4.1 percent) and Black (1.33 percent)."
+var one50kDef =  "NYC businesses that received $150 thousand or less of PPP loans made up 88 percent of all loan recipients. However, these NYC businesses only received 7.8 billion of PPP loans. The 34,917 businesses that received over $150 thousand of PPP loans received 73 percent, or $20.9 billion of PPP loans."
 
 
 var infoCatDef = [btypeDef, genderDef, nonprofitDef, lenderDef, vetDef, raceDef, one50kDef]
@@ -62,7 +61,7 @@ var ntaDef = "According to NYC Department of City Planning, Neighborhood Tabulat
 
 var infoGeoDef = [boroDef, congdistDef, zctaDef, ntaDef]
 
-var infoRatValues = ['Residential Ratio', 'Busienss Ratio', 'Other Ratio', 'Total Ratio']
+var infoRatValues = ['Residential Ratio', 'Business Ratio', 'Other Ratio', 'Total Ratio']
 var infoRatCodes = ['resRat', 'busRat', 'othRat', 'totRat']
 
 var infoRatResult =  infoRatValues.reduce(function(infoRatResult, field, index) {
@@ -78,13 +77,43 @@ var totRatDef = "The ratio of all addresses in the Census Tract part to the tota
 
 var infoRatDef = [resRatDef, busRatDef, othRatDef, totRatDef]
 
+var infoClassValues = ['Equal Interval', 'Quantile', 'Number of Classes']
+var infoClassCodes = ['equClass', 'qntClass', 'numClass']
+
+var infoClassResult =  infoClassValues.reduce(function(infoClassResult, field, index) {
+  infoClassResult[infoClassCodes[index]] = field;
+  return infoClassResult;
+}, {})
+
+var equClassDef = "The equal interval (or equal step) classification method divides the range of attribute values into equally sized classes."
+var qntClassDef = "The quantile classification method places equal numbers of observations into each class. This method is best for data that is evenly distributed across its range."
+var numClassDef = "Choosing the number of data classes is an important part of map design. Increasing the number of data classes will result in a more 'information rich' map by decreasing the amount of data generalization. However, too many data classes may overwhelm the map reader with information and distract them from seeing general trends in the distribution. In addition, a large numbers of classes may compromise map legibility—more classes require more colors that become increasingly difficult to tell apart. Many cartographers advise that you use five to seven classes for a choropleth map."
+
+
+var infoClassDef = [equClassDef, qntClassDef, numClassDef]
+
+var infoClrSchValues = ['Sequential', 'Diverging']
+var infoClrSchCodes = ['seqClrSch', 'divClrSch']
+
+var infoClrSchResult =  infoClrSchValues.reduce(function(infoClrSchResult, field, index) {
+  infoClrSchResult[infoClrSchCodes[index]] = field;
+  return infoClrSchResult;
+}, {})
+
+var seqClrSchDef = "Sequential schemes are suited to ordered data that progress from low to high. Lightness steps dominate the look of these schemes, with light colors for low data values to dark colors for high data values."
+var divClrSchDef = "Diverging schemes put equal emphasis on mid-range critical values and extremes at both ends of the data range. The critical class or break in the middle of the legend is emphasized with light colors and low and high extremes are emphasized with dark colors that have contrasting hues."
+
+var infoClrSchDef = [seqClrSchDef, divClrSchDef]
+
 var $infoCat = $('.infoCat');
 var $infoMet = $('.infoMet');
 var $infoGeo = $('.infoGeo')
-var $infoRat = $('.infoRat')
+var $infoRat = $('.infoRat');
+var $infoClass = $('.infoClass');
+var $infoClrSch = $('.infoClrSch');
 
-var a, b, c, d, e, i, j, k, l;
-a = b = c = d = i = j = k = l = -1;
+var a, b, c, d, e, f, i, j, k, l, m, n;
+a = b = c = d = e = f= i = j = k = l = m = n = -1;
 
 function infoDrpDwn () {
   $.each(infoCatResult, function (key, value) {
@@ -108,12 +137,26 @@ function infoDrpDwn () {
     $infoRat.append(
       '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'" class="collapse" aria-labelledby="heading'+key+'" data-parent="#accordionRat">'+infoRatDef[l]+'</div></a>');
       });
+
+  $.each(infoClassResult, function (key, value) {
+    m = m+1;
+    $infoClass.append(
+      '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'" class="collapse" aria-labelledby="heading'+key+'" data-parent="#accordionClass">'+infoClassDef[m]+'</div></a>');
+      });
+
+  $.each(infoClrSchResult, function (key, value) {
+    n = n+1;
+    $infoClrSch.append(
+      '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'" class="collapse" aria-labelledby="heading'+key+'" data-parent="#accordionClass">'+infoClrSchDef[n]+'</div></a>');
+      });
     }
 
 var $infoCat2 = $('.infoCat2');
 var $infoMet2 = $('.infoMet2');
 var $infoGeo2 = $('.infoGeo2')
-var $infoRat2 = $('.infoRat2')    
+var $infoRat2 = $('.infoRat2') 
+var $infoClass2 = $('.infoClass2')
+var $infoClrSch2 = $('.infoClrSch2');    
 function infoDrpDwn2 () {
   $.each(infoCatResult, function (key, value) {
     a = a+1;
@@ -135,6 +178,18 @@ function infoDrpDwn2 () {
     d = d+1;
     $infoRat2.append(
       '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'2"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'2" class="collapse" aria-labelledby="heading'+key+'2" data-parent="#accordionRat2">'+infoRatDef[d]+'</div></a>');
+      });
+
+  $.each(infoClassResult, function (key, value) {
+    e = e+1;
+    $infoClass2.append(
+      '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'2"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'2" class="collapse" aria-labelledby="heading'+key+'2" data-parent="#accordionClass2">'+infoClassDef[e]+'</div></a>');
+      });
+
+  $.each(infoClrSchResult, function (key, value) {
+    f = f+1;
+    $infoClrSch2.append(
+      '<a class="list-group-item" data-toggle="collapse" href="#collapse'+key+'2"><span id = "infoTxt">'+value+'</span><div id="collapse'+key+'2" class="collapse" aria-labelledby="heading'+key+'2" data-parent="#accordionClass2">'+infoClrSchDef[f]+'</div></a>');
       });
     }
     

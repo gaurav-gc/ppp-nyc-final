@@ -25,7 +25,7 @@ zoomHome.addTo(map1);
 
 //Print options
 L.control.browserPrint({
-  printModes: ["Portrait", "Landscape"]
+  printModes: ["Portrait", "Landscape"],
 }).addTo(map1);
 
 map1.on("browser-print-start", function(e){
