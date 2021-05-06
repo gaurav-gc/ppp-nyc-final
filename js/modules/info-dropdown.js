@@ -1,4 +1,4 @@
-var infoParTxt = "<p>The Paycheck Protection Program (PPP) is a loan designed to provide a direct incentive for small businesses to keep their workers on payroll and was established through the Coronavirus Aid, Relief, and Economic Security (CARES) Act on March 27, 2020. The PPP loan level Data for the maps are derived from two datasets from the Small Business Administration (SBA) for loans lent through March XX, 2021. <br><br>.</p>"
+var infoParTxt = "<p>The Paycheck Protection Program (PPP) is a loan designed to provide a direct incentive for small businesses to keep their workers on payroll and was established through the Coronavirus Aid, Relief, and Economic Security (CARES) Act on March 27, 2020.</p>"
 const $infoPar = $('#wrapper, #wrapper2');
 function infoPar () {
   $infoPar.append(infoParTxt);
@@ -53,8 +53,8 @@ var infoGeoResult =  infoGeoValues.reduce(function(infoGeoResult, field, index) 
   return infoGeoResult;
 }, {})
 
-var boroDef = "Of the PPP loan recipients who received less than $150 thousand, and of the 5 boroughs, Manhattan (New York County) received $1.9 billion in PPP loans, $800 million more than Brooklyn (Kings County), the borough who received the second highest amount of PPP loans. Although, Staten Island (Richmond County) received the least amount of PPP loans, $163 million, the average loan amount was $3.6 thousand more than the borough with the lowest average PPP loan amount, Bronx."
-var congdistDef = "Of the PPP loan recipients who received less than $150 thousand, Congressional District 12 (NY-12) received $1.2 billion, or 27 percent of all PPP loans. Although, NY-12's boundaries spans both Manhattan and Brooklyn, $1.1 billion was allocated to businesses in Manhattan."
+var boroDef = "Manhattan received $15.7 billion in PPP loans, 55 percent of all PPP loans, $10.2 billion more than Brooklyn, the borough who received the second highest amount of PPP loans. Staten Island received the least amount of PPP loans, $762 million, with an average loan amount of $68 thousand per business - $79 thousand less than Manhattan's average."
+var congdistDef = "Congressional District 12 (NY-12) received $9.4 billion, or 33 percent of all PPP loans. Although, NY-12's boundaries spans both Manhattan and Brooklyn, $7.9 billion was allocated to businesses in Manhattan."
 var zctaDef = "According to the U.S. Census Bureau, Zip Code Tabulation Areas (ZCTAs) are generalized areal representations of U.S. Postal Service zip code service areas. In creating ZCTAs, the Census Bureau took the most frequently occurring Zip Code in an area for the ZCTA code. For more details on data for ZCTAs were calculated, see methodology."
 var ntaDef = "According to NYC Department of City Planning, Neighborhood Tabulation Areas (NTAs) were created to project populations at a small area level, from 2000 to 2030 for PlaNYC, the long-term sustainability plan for NYC. The minimum population for each NTA is 15,000. For more details on data for ZCTAs were calculated, see methodology."
 

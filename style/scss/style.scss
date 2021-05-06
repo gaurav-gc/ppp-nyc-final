@@ -6,7 +6,8 @@
 @import 'info';
 
 * {
-  font-family: 'Questrial', sans-serif;
+ // font-family: 'Questrial', sans-serif;
+ font-family: 'Oxygen', sans-serif;
 }
 
 //Sidebar
@@ -52,9 +53,9 @@
 
 .leaflet-sidebar-content {
   background: rgba(255, 255, 255, 0.6);
-  #info {
-    background: rgb(241, 237, 237);
-    height: 100vh;
+  #help {
+    background: rgba(78, 158, 125, 0.322);
+    height: 300vh;
   }
 }
 

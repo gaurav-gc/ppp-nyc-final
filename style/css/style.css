@@ -464,7 +464,7 @@ h6 {
   margin-bottom: 1.5rem;
   margin-top: .75rem; }
 
-#wrapper p, #wrapper2 p, #acknowledgement2 p {
+#wrapper p, #wrapper2 p, #acknowledgement2 p, #acknowledgement p {
   font-size: 15px;
   padding: 10px; }
 
@@ -505,7 +505,7 @@ h6 {
   color: black; }
 
 * {
-  font-family: 'Questrial', sans-serif; }
+  font-family: 'Oxygen', sans-serif; }
 
 #home .leaflet-sidebar-header {
   background-color: #4c00ff; }
@@ -533,9 +533,9 @@ h6 {
 
 .leaflet-sidebar-content {
   background: rgba(255, 255, 255, 0.6); }
-  .leaflet-sidebar-content #info {
-    background: #f1eded;
-    height: 100vh; }
+  .leaflet-sidebar-content #help {
+    background: rgba(78, 158, 125, 0.322);
+    height: 300vh; }
 
 #map1 {
   height: 100vh; }
