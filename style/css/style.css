@@ -507,6 +507,10 @@ h6 {
 * {
   font-family: 'Oxygen', sans-serif; }
 
+@media only screen and (max-width: 600px) {
+  body {
+    display: none; } }
+
 #home .leaflet-sidebar-header {
   background-color: #4c00ff; }
 

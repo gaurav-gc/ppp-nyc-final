@@ -1,11 +1,12 @@
 $(function(){
+
   document.getElementById('bs-switch-1').switchButton({
     onlabel: "Equal Interval",
     offlabel: "Quantile",
     onstyle: "info", 
     offstyle: "warning",
     size: "mini",
-    width: "300"
+    width: 300
 });
 });
 $(function(){
@@ -15,7 +16,7 @@ $(function(){
     onstyle: "info", 
     offstyle: "warning",
     size: "mini",
-    width: "300"
+    width: 300
 });
 });
 
