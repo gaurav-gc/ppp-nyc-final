@@ -22,7 +22,7 @@ var zoomHome = L.Control.zoomHome({
 
 });
 zoomHome.addTo(map1);
-
+/*
 //Print options
 L.control.browserPrint({
   printModes: ["Portrait", "Landscape"],
@@ -31,7 +31,7 @@ L.control.browserPrint({
 map1.on("browser-print-start", function(e){
   legend.addTo(e.printMap);
 })
-/*
+
 //Social Share
 L.control.social({
   position: 'topleft',
