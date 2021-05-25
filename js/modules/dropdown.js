@@ -141,7 +141,7 @@ function bldDrpDwn () {
   $.each(catResult, function (key, value) {
     z= z+1;
     $cat.append(
-      '<div class="option hvr-icon-fade"><input type="radio" class="radio slctCat" value="'+key+'" /><label for="'+key+'"><i class="'+infoCatIcon[z]+'"></i><span class="label">'+value+'</span></label></div>');
+      '<div class="option hvr-icon-fade '+key+'wlk"><input type="radio" class="radio slctCat" value="'+key+'" /><label for="'+key+'"><i class="'+infoCatIcon[z]+'"></i><span class="label">'+value+'</span></label></div>');
       });
 
   $.each(metricResult, function (key, value) {
@@ -151,7 +151,7 @@ function bldDrpDwn () {
 
   $.each(btypeResult, function (key, value) {
     $btype.append(
-      '<div class="option"><input type="radio" class="radio slctAttr" value="'+key+'"/><label for="'+key+'">'+value+'</label></div>');
+      '<div class="option '+key+'wlk"><input type="radio" class="radio slctAttr" value="'+key+'"/><label for="'+key+'">'+value+'</label></div>');
       });
 
   $.each(genderResult, function (key, value) {

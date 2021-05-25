@@ -35,8 +35,10 @@
 <!-- Bootsrap Switch -->
 
 <link rel="stylesheet" href="./src/plugins/bootstrap-switch-button-master/bootstrap-switch-button.min.css"/>
-
-    <!--- jQuery UI-->
+<!-- intro.js -->
+<link rel="stylesheet" href="./src/intro/introjs.min.css"/>
+    
+<!--- jQuery UI-->
 
     <link rel="stylesheet" href="./src/jquery/jquery-ui.min.css" />
 
@@ -47,7 +49,9 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-
+   
+<!-- Driver.js -->
+<link rel="stylesheet" href="./src/driver-js/driver.min.css">
     <link rel="stylesheet" href="./style/css/style.min.css" />
     <!--- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -73,11 +77,13 @@
               <li id="home">
                 <a href="#home" role="tab"><i class="fas fa-map"></i></a>
               </li>
+                <!--
               <li id="search">
                 <a href="#search" role="tab"
                   ><i class="fas fa-search-location"></i
                 ></a>
               </li>
+             -->
               <li id="info">
                 <a href="#info" role="tab"
                   ><i class="fas fa-info-circle"></i
@@ -124,7 +130,7 @@
                 <div class="options-container drpCat">
                 </div>
                 <!-- .options-container -->
-                <div class="selected">Please Select</div>
+                <div class="selected catSlct">Please Select</div>
               </div>
               <!-- .select-box -->
               <div class="grpMet">
@@ -133,7 +139,7 @@
                   <div class="options-container drpMet" id="slctMet">
                   </div>
                   <!-- .options-container -->
-                  <div class="selected">Please Select</div>
+                  <div class="selected metSlct">Please Select</div>
                 </div>
                 <!-- .select-box -->
               </div>
@@ -143,7 +149,7 @@
                 <div class="select-box" id="btypeTT">
                   <div class="options-container drpAttr"></div>
                   <!-- .options-container -->
-                  <div class="selected">Please Select</div>
+                  <div class="selected btypeSlct">Please Select</div>
                 </div>
                 <!-- .select-box -->
               </div>
@@ -203,7 +209,7 @@
                   <div class="options-container race drpAttr">
                   </div>
                   <!-- .options-container -->
-                  <div class="selected">Please Select</div>
+                  <div class="selected raceSlct">Please Select</div>
                 </div>
                 <!-- .select-box -->
               </div>
@@ -215,7 +221,7 @@
                   <div class="options-container drpMap">
                   </div>
                   <!-- .options-container -->
-                  <div class="selected">Select a Geography</div>
+                  <div class="selected mapSlct">Select a Geography</div>
                 </div>
                 <!-- .select-box -->
               </div>
@@ -603,11 +609,13 @@
               <li id="home">
                 <a href="#home" role="tab"><i class="fas fa-map"></i></a>
               </li>
+              <!---
               <li id="search">
                 <a href="#search" role="tab"
                   ><i class="fas fa-search-location"></i
                 ></a>
               </li>
+               --->
               <li id="info">
                 <a href="#info" role="tab"
                   ><i class="fas fa-info-circle"></i
@@ -1162,6 +1170,9 @@
     <!--- Classybrew--->
     <script src="./src/classybrew/classybrew.js"></script>
 
+    <!-- intro.js -->
+    <script src="./src/intro/intro.min.js"></script>
+
     <!---   jQuery  -->
     <script src="./src/jquery/jquery-3.5.1.min.js"></script>
    
@@ -1183,7 +1194,9 @@
     <script src="./src/plugins/bootstrap-input-spinner-master/input-spinner.js"></script>
  <!-- Bootstrap Switch Button -->
          <script src="./src/plugins/bootstrap-switch-button-master/bootstrap-switch-button.min.js"></script>
-  
+
+<!-- Driver.js -->
+<script src="./src/driver-js/driver.min.js"></script>
    <!-- Ion Icons -->
          <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!---*****************DATA*****************-->

@@ -135,6 +135,7 @@ $('.slctGrps,.grpMet,.grpCat,.grpMap, .grpNTAMap, .grpNTARatio').on('click', fun
   } else {
     infoKey = slctCat + '_' + slctMet + '_' + slctAttr;
   }
+  console.log(slctCat);
 });
 
 export { slctCat, slctMet, slctAttr, slctMap, slctNTAMap, slctNTARatio, infoKey, mapkey, selectedAll };
