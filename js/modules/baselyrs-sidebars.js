@@ -15,14 +15,14 @@ var lyrCartoPstrn2 = L.tileLayer.provider('CartoDB.Positron');
 //Assign provider layers to baselayers
 
 var baseLayers = {
-  'Stadia Alidade Smooth Dark': lyrStadiaAliSmthDrk,
+ // 'Stadia Alidade Smooth Dark': lyrStadiaAliSmthDrk,
   'Carto Dark Matter': lyrCartoDrkMttr,
   'Carto Voyager': lyrCartoVygr,
   'Carto Positron': lyrCartoPstrn,
 };
 
 var baseLayers2 = {
-  'Stadia Alidade Smooth Dark': lyrStadiaAliSmthDrk2,
+ // 'Stadia Alidade Smooth Dark': lyrStadiaAliSmthDrk2,
   'Carto Dark Matter': lyrCartoDrkMttr2,
   'Carto Voyager': lyrCartoVygr2,
   'Carto Positron': lyrCartoPstrn2,
@@ -44,14 +44,14 @@ var defaultBaseLyr = lyrCartoDrkMttr.addTo(map1);
 var defaultBaseLyr2 = lyrCartoVygr2.addTo(map2);
 
 //COPIED OVER -- Giving baselayers a custom ID to reference later: http://jsfiddle.net/nathansnider/6aLmzwmg/
-var groups = L.layerGroup([lyrCartoDrkMttr, lyrCartoVygr, lyrStadiaAliSmthDrk, lyrCartoPstrn]);
+var groups = L.layerGroup([lyrCartoDrkMttr, lyrCartoVygr, lyrCartoPstrn]);
 var tempID = 1;
 var baseLyrId = groups.eachLayer(function (layer) {
   layer.layerID = tempID;
   tempID += 1;
 });
 
-var groups2 = L.layerGroup([lyrCartoDrkMttr2, lyrCartoVygr2, lyrCartoPstrn2, lyrStadiaAliSmthDrk2]);
+var groups2 = L.layerGroup([lyrCartoDrkMttr2, lyrCartoVygr2, lyrCartoPstrn2]);
 var tempID2 = 5;
 var baselyrId2 = groups2.eachLayer(function (layer) {
   layer.layerID2 = tempID2;
